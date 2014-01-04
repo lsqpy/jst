@@ -1,0 +1,1 @@
+<?php	return array ( 'rule' => 'index', 'parameters' => 'Index/Index/index', );?>

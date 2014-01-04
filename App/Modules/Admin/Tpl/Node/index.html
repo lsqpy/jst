@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../Public/css/public.css" rel="stylesheet" type="text/css" />
+<link href="../Public/css/style.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/js/jquery-1.4.2.js" type="text/javascript"></script>
+<script src="../Public/js/common.js" type="text/javascript"></script>
+</head>
+
+<body topmargin="10" leftmargin="10">
+    <!--中间内容左边内容-->
+     <table width="98%" height="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
+     	<tr>
+        	<td>
+            	<div class="right"><p style="background:url(../Public/images/weizhi.jpg) no-repeat 0px 14px;"> 当前位置： > 列表</p></div>
+            </td>
+        </tr>
+     </table>
+     
+     <table width="98%" height="100%" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto; border:#c1e0f4 1px solid; margin-top:11px;">
+     	<tr>
+        	<td class="rightList02">
+            	<div class="rightList">
+                	<ul>
+                    	<li><input type="checkbox" id="checkAll01"/>&nbsp;全选</li>
+                        <li><a href="javascript:void(0);" onClick="location='{:U('Node/add')}';" class="add">新增</a></li>
+                        <!--li><a href="#" class="update">修改</a></li-->
+                        <li><a href="javascript:void(0);" class="delete" onClick="delAll();" >删除</a></li>
+                
+                        <li  id="search01"><img src="../Public/images/search.jpg" style="padding-top:3px;" /></li>
+                        
+                        <div class="clear"></div>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <div class="rightList01"></div>
+                <div class="clear"></div>
+            </td>
+        </tr>
+     </table>
+     <div id="search" style="display:none;">
+      <form action="{:U('Node/search')}" method="get" enctype="multipart/form-data">
+     	<table width="98%" height="100%" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto; border:#c1e0f4 1px solid; margin-top:11px;">
+        	<tr>
+            	<td style="background-color:#edf2f5; border:#b9c8d6 1px solid; height:29px;" align="center">
+                	<table cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                            <td width="90" align="center" height="25">名称：</td>
+                            <td width="160">
+                                <input type="text" id="keyword" style="width:150px;border:1px solid #D1D1D1" name="title">
+                            </td>
+                            <td>按名称搜索</td>
+                        </tr>
+                        <tr>
+                            <td width="90" align="center" height="25">项目：</td>
+                            <td width="160">
+                                <input type="text" id="keyword" style="width:150px;border:1px solid #D1D1D1" name="group">
+                            </td>
+                            <td>按项目搜索</td>
+                        </tr>
+                        <tr>
+                            <td width="90" align="center" height="25">模型：</td>
+                            <td width="160">
+                                <input type="text" id="keyword" style="width:150px;border:1px solid #D1D1D1" name="module">
+                            </td>
+                            <td>按模型搜索</td>
+                        </tr>
+                        <tr>
+                            <td width="90" align="center" height="25">控制器：</td>
+                            <td width="160">
+                                <input type="text" id="keyword" style="width:150px;border:1px solid #D1D1D1" name="action">
+                            </td>
+                            <td>按控制器搜索</td>
+                        </tr>
+                       
+                        <tr>
+                            <td colspan="3" align=center><input width="45" type="image" height="21" border="0" class="np" src="../Public/images/search.jpg" name="imageField"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+     </form>
+     </div>
+     <form method="post" action="{:U('sort')}" id="form2" name="form2" class="form2">
+     <table id="table_form" width="98%" height="100%" cellpadding="0" cellspacing="0" align="center" class="rightList03">
+     	<tr>
+        	<td class="right02" colspan="14" style="text-align:left; border-bottom:#b9c8d6 1px solid;"><span></span></td>
+        </tr>
+        <tr>
+        	<td width="5%" style="background-color:#eef1f3; border:none;">选择</td>
+            <td width="5%" style="background-color:#eef1f3; border:none;">ID</td>
+            <td width="5%" style="background-color:#eef1f3; border:none;">PID</td>
+            <td width="5%" style="background-color:#eef1f3; border:none;">GID</td>
+            <td width="10%" style="background-color:#eef1f3; border:none;">名称</td>
+            <td width="10%" style="background-color:#eef1f3; border:none;">项目</td>
+            <td width="10%" style="background-color:#eef1f3; border:none;">模型</td>
+            <td width="10%" style="background-color:#eef1f3; border:none;">控制器</td>
+            <td width="10%" style="background-color:#eef1f3; border:none;">级别</td>
+            <td width="10%" style="background-color:#eef1f3; border:none;">排序</td>
+            <td width="10%" style="background-color:#eef1f3; border:none;">状态</td>
+            <td width="10%" style="background-color:#eef1f3; border:none;">操作</td>
+        </tr>
+        <volist name="data" id="vo">
+        <tr>
+        	<td><input name='id[]' class="checkThis" type="checkbox" value="{$vo.id}" /></td>
+            <td>{$vo.id}</td>
+            <td>{$vo.pid}</td>
+            <td>{$vo.gid}</td>
+            <td style="text-align:left;text-indent:20px;"><a href="{:U('Node/edit',array('id'=>$vo['id']))}">{$vo.html}{$vo.title}</a></td>
+            <td>{$vo.group}</td>
+            <td>{$vo.module}</td>
+            <td>{$vo.action}</td>
+            <td>{$vo.level}</td>
+            <td><input onblur="sort(this.name,this.value)" type="text" style="width: 40px;text-align: center;" class="rightCon01"  name="{$vo.id}" value="{$vo.sort}"/></td>
+            <td><eq name="vo.status" value="1">审核<else/><font color=blue>屏蔽</font></eq></td>
+            <td align="center">
+                <a href="{:U('Node/edit',array('id'=>$vo['id']))}">[编辑]</a>  
+                <a href="javascript:void(0);" onclick="del(this,{$vo.id},'{$vo.title}')">[删除]</a> 
+                <div class="clear"></div>
+            </td>
+        </tr>
+        </volist>
+        
+     </table>
+     </form>
+     <table width="98%" height="100%" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto; border:#c1e0f4 1px solid; margin-top:11px;">
+     	<tr>
+        	<td class="rightList02">
+            	<div class="rightList">
+                	<ul>
+                    	<li><input type="checkbox" id="checkAll01"/>&nbsp;全选</li>
+                        <li><a href="javascript:void(0);" onClick="location='{:U('Node/add')}';" class="add">新增</a></li>
+                        <!--li><a href="#" class="update">修改</a></li-->
+                        <li><a href="javascript:void(0);" class="delete" onClick="delAll();" >删除</a></li>
+                        
+                        <li  id="search02"><img src="../Public/images/search.jpg" style="padding-top:3px;" /></li>
+                        
+                        <div class="clear"></div>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <div class="rightList01"></div>
+                <div class="clear"></div>
+            </td>
+        </tr>
+     </table>
+     
+<script>
+    //排序
+    function sort(name,value){
+        var url = "{:U('Node/sort')}";
+        $.post(url,{name:name,value:value},function(data){
+            
+        },'json');  
+        
+    }
+    //删除
+    function del(obj,id,name){
+        if(confirm('您确定删除'+name+'？')){
+            var url = "{:U('Node/del')}";
+            var objnode = obj.parentNode.parentNode;
+             $.post(url,{id:id},function(data){
+                    objnode.parentNode.removeChild(objnode);
+                },'json');  
+        }
+    }
+    //选择删除
+    function delAll(){
+        var id;
+        var arr = [];
+        var obj = [];
+        $("input[name='id[]']").each(
+            function(i){
+                if(this.checked==true){
+                    arr.push(this.value);
+                    obj.push(this);
+                }
+            }
+        );
+   
+        var url = "{:U('Node/del')}";
+        id = arr.join(",");
+        if(confirm('您确定删除编号：'+id+'？')){
+            $.post(url,{id:id},function(data){
+                //循环删除节点
+                for(var i=0;i<obj.length;i++){
+                    obj[i].parentNode.parentNode.parentNode.removeChild(obj[i].parentNode.parentNode);
+                }
+            },'json');  
+        }
+    }
+
+    //TableColor("名称","奇数行背景","偶数行背景","鼠标经过背景","点击后背景");
+    TableColor("table_form","#f3faff","#ffffff","#e9f6ff","#d0dae2");
+
+</script>
+</body>
+</html>

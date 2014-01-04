@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../Public/css/public.css" rel="stylesheet" type="text/css" />
+<link href="../Public/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body topmargin="10" leftmargin="10">
+    <!--中间内容左边内容-->
+     <table width="98%" height="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
+     	<tr>
+        	<td>
+            	<div class="right"><p style="background:url(../Public/images/weizhi.jpg) no-repeat 0px 14px;"> 当前位置： &nbsp;>&nbsp;编辑&nbsp;>&nbsp;</p></div>
+            </td>
+        </tr>
+     </table>
+     <form action="{:U('Siteset/doEdit')}" method="post" enctype="multipart/form-data">
+     
+     <table width="98%" height="100%" cellpadding="0" cellspacing="0" align="center" class="rightCon">
+     	<tr>
+        	<td class="right02" colspan="2" style="text-align:left; border-bottom:#b9c8d6 1px solid;"><span>站点配置</span></td>
+        </tr>
+ 
+        <tr>
+        	<td width="15%" align="center">站点名称</td>
+            <td width="85%">
+                <input type="text" value="{$info.name}" name="name" class="rightCon01" />
+            </td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">keywords</td>
+            <td width="85%">
+                <textarea name="keywords" style="font-size:12px;margin:5px;width:320px;height:100px;" >{$info.keywords}</textarea>
+            </td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">description</td>
+            <td width="85%">
+                <textarea name="description" style="font-size:12px;margin:5px;width:320px;height:100px;" >{$info.description}</textarea>
+            </td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">站点地址</td>
+            <td width="85%">
+                <input type="text" value="{$info.siteaddress}" name="siteaddress" class="rightCon01" />
+            </td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">客服邮箱</td>
+            <td width="85%">
+                <input type="text" value="{$info.email}" name="email" class="rightCon01" />
+            </td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">地址</td>
+            <td width="85%">
+                <input type="text" value="{$info.address}" name="address" class="rightCon01" />
+            </td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">邮政编码</td>
+            <td width="85%">
+                <input type="text" value="{$info.zipcode}" name="zipcode" class="rightCon02" />
+            </td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">电话</td>
+            <td width="85%">
+                <input type="text" value="{$info.tel}" name="tel" class="rightCon02" />
+            </td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">传真</td>
+            <td width="85%">
+                <input type="text" value="{$info.fax}" name="fax" class="rightCon02" />
+            </td>
+        </tr>
+        <tr>
+        	<td colspan="2" align="center" style="background-color:#eef1f3; height:29px; line-height:29px; vertical-align:middle;"><input type="image" src="../Public/images/sub.jpg" /></td>
+        </tr>
+     </table>
+     </form>
+</body>
+</html>

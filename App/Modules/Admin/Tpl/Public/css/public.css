@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* 全局样式定义 */
+* { margin:0; padding:0; word-wrap:break-word; word-break:break-all; }/*英文自动换行*/
+body {color:#000000; font-family:"宋体"; font-size:12px;}
+a{color:#333333;text-decoration:none;}
+a:hover { text-decoration:none; }
+ul, li { list-style:none; }
+img { border:none; }
+body,td,th {font-size: 12px;}
+table{border-collapse:collapse;border-spacing:0;}
+ul, li, dl, dd, dt, p, span, font, form, img, h1, h2, h3, div, strong, label, em, table, th, td, tr, input ,select {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+html { overflow:-moz-scrollbars-vertical; } /* 在Firefox下始终显示滚动条*/
+.clear {
+    clear: both;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+}
+/*按钮*/
+input[type="button"], input[type="submit"], input[type="reset"] {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("../images/allbtbg2.gif") repeat scroll 0 0 #EFF7D0;
+    border-color: -moz-use-text-color #ACACAC #ACACAC -moz-use-text-color;
+    border-image: none;
+    border-style: none solid solid none;
+    border-width: medium 1px 1px medium;
+    cursor: pointer;
+    padding: 4px 5px;
+}
+.select{width: auto;padding-top:3px;}
+#table_form td{width:auto;}

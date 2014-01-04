@@ -1,0 +1,3 @@
+<?php
+//000000000000a:1:{i:0;a:6:{s:2:"id";s:1:"1";s:3:"pid";s:1:"0";s:5:"title";s:12:"后台项目";s:5:"group";s:5:"Admin";s:6:"module";s:0:"";s:5:"child";a:5:{i:0;a:5:{s:2:"id";s:1:"2";s:3:"pid";s:1:"1";s:5:"title";s:6:"后台";s:5:"group";s:5:"Admin";s:6:"module";s:5:"Index";}i:1;a:5:{s:2:"id";s:1:"4";s:3:"pid";s:1:"1";s:5:"title";s:6:"文档";s:5:"group";s:5:"Admin";s:6:"module";s:7:"Article";}i:2;a:5:{s:2:"id";s:2:"18";s:3:"pid";s:1:"1";s:5:"title";s:6:"设置";s:5:"group";s:5:"Admin";s:6:"module";s:7:"Siteset";}i:3;a:5:{s:2:"id";s:2:"40";s:3:"pid";s:1:"1";s:5:"title";s:6:"会员";s:5:"group";s:5:"Admin";s:6:"module";s:6:"Member";}i:4;a:5:{s:2:"id";s:2:"70";s:3:"pid";s:1:"1";s:5:"title";s:6:"商品";s:5:"group";s:5:"Admin";s:6:"module";s:4:"Shop";}}}}
+?>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../Public/css/public.css" rel="stylesheet" type="text/css" />
+<link href="../Public/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body topmargin="10" leftmargin="10">
+    <!--中间内容左边内容-->
+     <table width="98%" height="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
+     	<tr>
+        	<td>
+            	<div class="right"><p style="background:url(../Public/images/weizhi.jpg) no-repeat 0px 14px;"> 当前位置：权限&nbsp;>&nbsp;</p></div>
+            </td>
+        </tr>
+     </table>
+     <form action="{:U('AuthGroup/doRole')}" method="post" enctype="multipart/form-data">
+     <input type="hidden" name="id" value="{$_GET['id']}" />
+     <table width="98%" height="100%" cellpadding="0" cellspacing="0" align="center" class="rightCon">
+     	<tr>
+        	<td class="right02" colspan="2" style="text-align:left; border-bottom:#b9c8d6 1px solid;"><span>权限</span></td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">分配权限</td>
+            <td width="85%">
+                
+                <foreach name="data" item="value">
+                <dl id="tp1" style="background: blue;">
+                    &nbsp;<input type="checkbox" value="{$value.id}" name="access[]" <if condition="$value.access eq 1"> checked="checked" </if> />{$value.title}-({$value.group})
+                </dl>
+                    <foreach name="value.child" item="val"> 
+                        <dt id="tp2" style="background:lime;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="{$val.id}" name="access[]" <if condition="$val.access eq 1"> checked="checked" </if> />{$val.title}-({$val.group}-{$val.module})</li>
+                        
+                        <foreach name="val.child" item="v">
+                        <dd id="tp3" style="background:silver;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" value="{$v.id}" name="access[]" <if condition="$v.access eq 1"> checked="checked" </if> />{$v.title}-({$v.group}-{$v.module}-{$v.action})
+                           
+                        </dd>
+                        </foreach>
+                        </dt>
+                    </foreach>
+                    
+                </foreach>
+                
+                </td>
+        </tr>
+        
+        
+        <tr>
+        	<td colspan="2" align="center" style="background-color:#eef1f3; height:29px; line-height:29px; vertical-align:middle;"><input type="image" src="../Public/images/sub.jpg" /></td>
+        </tr>
+     </table>
+     
+     </form>
+     
+</body>
+</html>

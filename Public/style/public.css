@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* 全局样式定义 */
+* { margin:0; padding:0; word-wrap:break-word; word-break:break-all; }/*英文自动换行*/
+body {color:#000000; font-family:"微软雅黑"; font-size:12px;}
+a{text-decoration:none;}
+a:hover { text-decoration:none; }
+ul, li { list-style:none; }
+img { border:none; }
+body,td,th {font-size: 12px;}
+table{border-collapse:collapse;border-spacing:0;}
+ul, li, dl, dd, dt, p, span, font, form, img, h1, h2, h3, div, strong, label, em, table, th, td, tr, input ,select {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+html { overflow:-moz-scrollbars-vertical; } /* 在Firefox下始终显示滚动条*/
+.clear {
+    clear: both;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+}
+input:-ms-clear{display:none;}/**IE 10 X子*/
+*:focus{outline:none;}/**浏览器边框BUG*

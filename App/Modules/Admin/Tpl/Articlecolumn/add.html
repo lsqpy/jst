@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../Public/css/public.css" rel="stylesheet" type="text/css" />
+<link href="../Public/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body topmargin="10" leftmargin="10">
+    <!--中间内容左边内容-->
+     <table width="98%" height="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
+     	<tr>
+        	<td>
+            	<div class="right"><p style="background:url(../Public/images/weizhi.jpg) no-repeat 0px 14px;"> 当前位置：<present name="info.id"><input type="hidden" name="id" value="{$info.id}" />{$node.name}<else/>{$node.name|str_replace='修改','添加',###}</present>&nbsp;>&nbsp;<present name="info.id">修改<else/>添加</present>&nbsp;>&nbsp;{$info.name}</p></div>
+            </td>
+        </tr>
+     </table>
+     <form action="{:U('Articlecolumn/doAdd')}" method="post" enctype="multipart/form-data">
+     
+     <table width="98%" height="100%" cellpadding="0" cellspacing="0" align="center" class="rightCon">
+     	<tr>
+        	<td class="right02" colspan="2" style="text-align:left; border-bottom:#b9c8d6 1px solid;"><span>添加</span></td>
+        </tr>
+        
+        <tr>
+        	<td width="15%" align="center">栏目分类：</td>
+            <td width="85%">
+                <select name="pid" class="rightCon02" style="width:auto;padding:2px;">
+                    <option value="0">TOP、顶级分类</option>
+                    <volist name="cate" id="vo">
+                    <option value="{$vo.id}">{$vo.level}、{$vo.html}{$vo.name}</option>
+                    </volist>
+                </select>
+            </td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">栏目名称：</td>
+            <td width="85%"><input type="text" value="{$info.name}" name="name" class="rightCon01" /></td>
+        </tr>
+        <tr>
+        	<td width="15%" align="center">显示：</td>
+            <td width="85%">
+            
+                &nbsp;显示&nbsp;<input name="isshow" <notpresent name="info.isshow">checked="checked"</notpresent><eq name="info.isshow" value="1">checked="checked"</eq> type="radio" value="1"/>
+                &nbsp;隐藏&nbsp;<input name="isshow" <eq name="info.isshow" value="0">checked="checked"</eq> type="radio" value="0"/>
+            
+            </td>
+        </tr>
+        
+        <tr>
+        	<td width="15%" align="center">排序：</td>
+            <td width="85%"><input type="text" value="{$info.sort}" name="sort" class="rightCon02" /></td>
+        </tr>
+
+        <tr>
+        	<td width="15%" align="center">状态：</td>
+            <td width="85%">
+            
+                &nbsp;审核&nbsp;<input name="status" <notpresent name="info.status">checked="checked"</notpresent><eq name="info.status" value="1">checked="checked"</eq> type="radio" value="1"/>
+                &nbsp;屏蔽&nbsp;<input name="status" <eq name="info.status" value="0">checked="checked"</eq> type="radio" value="0"/>
+            
+            </td>
+        </tr>
+        
+        <tr>
+        	<td colspan="2" align="center" style="background-color:#eef1f3; height:29px; line-height:29px; vertical-align:middle;"><input type="image" src="../Public/images/sub.jpg" /></td>
+        </tr>
+     </table>
+     </form>
+</body>
+</html>

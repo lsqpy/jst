@@ -1,0 +1,1 @@
+<?php	return array ( 'host' => 'smtp.qq.com', 'port' => '25', 'username' => '120337210@qq.com', 'password' => 'Qepftih101', );?>
